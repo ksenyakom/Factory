@@ -48,7 +48,7 @@ public class ProductionConnector {
     }
 
 
-    public static void Add(Production production) throws SQLException {
+    public static void add(Production production) throws SQLException {
         Connection connection = DbConnector.getConnection();
         try (PreparedStatement statement = connection.prepareStatement(ADD);
         ) {
@@ -59,12 +59,13 @@ public class ProductionConnector {
         }
     }
 
-    public static void deleteById(int id) throws SQLException {
+    public static boolean deleteById(int id) throws SQLException {
         Connection connection = DbConnector.getConnection();
         try (PreparedStatement statement = connection.prepareStatement(DELETE)) {
 
             statement.setInt(1, id);
-            statement.executeUpdate();
+            if (statement.executeUpdate() ==0) return false;
+            else  return true;
 
         }
     }

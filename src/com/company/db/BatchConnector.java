@@ -63,13 +63,13 @@ public class BatchConnector {
         }
     }
 
-    public static void deleteById(int id) throws SQLException {
+    public static boolean deleteById(int id) throws SQLException {
         Connection connection = DbConnector.getConnection();
         try (PreparedStatement statement = connection.prepareStatement(DELETE)) {
 
             statement.setInt(1, id);
-            statement.executeUpdate();
-
+            if (statement.executeUpdate() ==0) return false;
+            else  return true;
         }
     }
 
@@ -78,9 +78,6 @@ public class BatchConnector {
         Connection connection = DbConnector.getConnection();
         try (PreparedStatement statement = connection.prepareStatement(UPDATE);
         ) {
-
-
-
             statement.setInt(1, batch.getBatchNumber());
             statement.setInt(2, batch.getBatchValue());
             statement.setTimestamp(3, batch.getBatchDate() );

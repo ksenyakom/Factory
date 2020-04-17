@@ -1,5 +1,6 @@
 package com.company.util;
 
+import com.company.db.BatchConnector;
 import com.company.entity.Batch;
 import com.company.entity.Production;
 
@@ -8,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 public class BatchUtil {
     public static Batch toObject(ResultSet resultSet) throws SQLException {
@@ -22,6 +24,12 @@ public class BatchUtil {
         return new Batch(id, batchNumber,batchValue, batchDate,prodId, factId);
     }
 
+    public static void showAllBatch () throws SQLException {
+        List<Batch> list = BatchConnector.getAll();
+        for (Batch item : list) {
+            System.out.println(item);
+        }
+    }
 
 
 }
