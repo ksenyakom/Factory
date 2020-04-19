@@ -2,13 +2,10 @@ package com.company.util;
 
 import com.company.db.BatchConnector;
 import com.company.entity.Batch;
-import com.company.entity.Production;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class BatchUtil {
@@ -19,7 +16,6 @@ public class BatchUtil {
         Timestamp batchDate = resultSet.getTimestamp ("batch_date");
         int prodId = resultSet.getInt("production_id");
         int factId = resultSet.getInt("factory_id");
-
 
         return new Batch(id, batchNumber,batchValue, batchDate,prodId, factId);
     }

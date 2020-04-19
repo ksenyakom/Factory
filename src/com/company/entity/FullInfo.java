@@ -1,5 +1,7 @@
 package com.company.entity;
 
+import com.company.util.TimestampUtil;
+
 public class FullInfo {
     private Batch batch;
     private Production production;
@@ -36,7 +38,6 @@ public class FullInfo {
     }
 
 
-
     public String toLongString() {
         return "FullInfo{" +
                 "batch=" + batch +
@@ -44,19 +45,21 @@ public class FullInfo {
                 ", factory=" + factory +
                 '}';
     }
+
     @Override
     public String toString() {
         return "Factory{" +
                 "id=" + factory.getId() +
                 ", shortName='" + factory.getShortName() +
-                '}'+
+                '}' +
                 "Batch{" +
                 " batchNumber=" + batch.getBatchNumber() +
                 ", batchValue=" + batch.getBatchValue() +
-                '}'+
+                ", batchDate=" + TimestampUtil.toString(batch.getBatchDate()) +
+                '}' +
                 "Production{" +
-                ", name='" + production.getName()+
-                ", createdAt=" + production.getCreatedAt() +
+                " name='" + production.getName() +
+                ", createdAt=" + TimestampUtil.toString(production.getCreatedAt()) +
                 '}';
     }
 }

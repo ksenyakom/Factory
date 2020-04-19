@@ -1,37 +1,64 @@
 package com.company;
 
-import com.company.MenuPack.ConsoleReader;
-import com.company.MenuPack.EnterBatchData;
-import com.company.MenuPack.EnterFactoryData;
-import com.company.MenuPack.EnterProductionData;
+import com.company.MenuPack.*;
 import com.company.db.BatchConnector;
 import com.company.db.FactoryConnector;
+import com.company.db.FullInfoConnector;
 import com.company.db.ProductionConnector;
 import com.company.entity.Batch;
 import com.company.entity.Factory;
+import com.company.entity.FullInfo;
 import com.company.entity.Production;
 import com.company.util.BatchUtil;
 import com.company.util.FactoryUtil;
+import com.company.util.FullInfoUtil;
 import com.company.util.ProductionUtil;
-import org.postgresql.util.PSQLException;
 
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.List;
 
 public class UserActions {
 
-// Batch
+    // FullInfo
+    public static void getReportForPeriod() throws SQLException {
+        Timestamp ts1 = EnterTimestamp.enterForSqlQuery("Вывести отчет с (YYYY-MM-DD): ");
+        Timestamp ts2 = EnterTimestamp.enterForSqlQuery(" по (YYYY-MM-DD): ");
+
+        if (ts2.after(ts1)) {
+
+            List<FullInfo> list = FullInfoConnector.getJoinForPeriod(ts1, ts2);
+            FullInfoUtil.showFullInfo(list);
+        }else System.out.println("Ошибка. Вторая дата раньше первой");
+    }
+
+    public static void getFullReport() throws SQLException {
+        List<FullInfo> list = FullInfoConnector.getFullJoin();
+        FullInfoUtil.showFullInfo(list);
+    }
+
+    public static void getReportByFactoryId() throws SQLException {
+        int id = ConsoleReader.userIntChoice("Введите id завода: ");
+        List<FullInfo> list = FullInfoConnector.getFullInfoByID(id);
+        FullInfoUtil.showFullInfo(list);
+    }
+
+
+    // Batch
     public static void addBatch() throws SQLException {
         Batch batch = EnterBatchData.enterBatchDataForAdd("Введите данные новой партии: ");
-            BatchConnector.add(batch);
-            System.out.println("Сохранено: ");
-            BatchUtil.showAllBatch();
+        BatchConnector.add(batch);
+        System.out.println("Сохранено: ");
+        BatchUtil.showAllBatch();
     }
-    public static void updateBatch() throws SQLException,PSQLException{
-            Batch batch = EnterBatchData.enterBatchDataForUpdate("Введите ID партии для редактирования:");
-            BatchConnector.update(batch);
-            System.out.println("Сохранено: ");
-            System.out.println(BatchConnector.getById(batch.getId()));
+
+    public static void updateBatch() throws SQLException {
+        Batch batch = EnterBatchData.enterBatchDataForUpdate("Введите ID партии для редактирования:");
+        BatchConnector.update(batch);
+        System.out.println("Сохранено: ");
+        System.out.println(BatchConnector.getById(batch.getId()));
     }
+
     public static void deleteBatch() throws SQLException {
         int id = ConsoleReader.userIntChoice("Введите ID партии для удаления:");
         if (BatchConnector.deleteById(id)) {
@@ -39,13 +66,14 @@ public class UserActions {
             BatchUtil.showAllBatch();
         } else System.out.println("Нет такой партии\n");
     }
-    public static void getByIdBatch() throws SQLException,PSQLException {
+
+    public static void getByIdBatch() throws SQLException {
         int id = ConsoleReader.userIntChoice("Введите ID ");
         Batch batch = BatchConnector.getById(id);
         System.out.println(batch);
     }
 
-//Production
+    //Production
     public static void addProduction() throws SQLException {
         Production production = EnterProductionData.enterProductionForAdd("Введите данные новой продукции: ");
         ProductionConnector.add(production);
@@ -59,9 +87,10 @@ public class UserActions {
         System.out.println("Сохранено: ");
         System.out.println(ProductionConnector.getById(production.getId()));
     }
+
     public static void getByIdProduction() throws SQLException {
         int id = ConsoleReader.userIntChoice("Введите ID ");
-        Production production= ProductionConnector.getById(id);
+        Production production = ProductionConnector.getById(id);
         System.out.println(production);
     }
 
@@ -73,7 +102,7 @@ public class UserActions {
         } else System.out.println("Нет такого продукта или запись используется в другой таблице\n");
     }
 
-// Factory
+    // Factory
     public static void addFactory() throws SQLException {
         Factory factory = EnterFactoryData.enterFactoryForAdd("Введите данные нового Завода: ");
         FactoryConnector.add(factory);
@@ -85,8 +114,9 @@ public class UserActions {
         Factory factory = EnterFactoryData.enterFactoryForUpdate("Введите ID завода для редактирования: ");
         FactoryConnector.update(factory);
         System.out.println("Сохранено: ");
-        System.out.println( FactoryConnector.getById(factory.getId()));
+        System.out.println(FactoryConnector.getById(factory.getId()));
     }
+
     public static void deleteFactory() throws SQLException {
         int id = ConsoleReader.userIntChoice("Введите ID завода для удаления:");
         if (FactoryConnector.deleteById(id)) {
@@ -94,9 +124,10 @@ public class UserActions {
             FactoryUtil.showAllFactory();
         } else System.out.println("Нет такого завода или запись используется в другой таблице\n");
     }
+
     public static void getByIdFactory() throws SQLException {
         int id = ConsoleReader.userIntChoice("Введите ID ");
-        Factory factory= FactoryConnector.getById(id);
+        Factory factory = FactoryConnector.getById(id);
         System.out.println(factory);
     }
 

@@ -1,5 +1,7 @@
 package com.company.entity;
 
+import com.company.util.TimestampUtil;
+
 import java.sql.Timestamp;
 
 public class Batch {
@@ -81,11 +83,12 @@ public class Batch {
 
     @Override
     public String toString() {
+
         return "Batch{" +
                 "id=" + id +
                 ", batchNumber=" + batchNumber +
                 ", batchValue=" + batchValue +
-                ", batchDate=" + batchDate +
+                ", batchDate=" + TimestampUtil.toString(batchDate )+
                 ", productionId=" + productionId +
                 ", factoryId=" + factoryId +
                 '}';

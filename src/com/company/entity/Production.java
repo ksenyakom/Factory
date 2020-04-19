@@ -1,7 +1,8 @@
 package com.company.entity;
 
+import com.company.util.TimestampUtil;
+
 import java.sql.Timestamp;
-import java.util.Date;
 
 public class Production {
     private int id;
@@ -88,8 +89,8 @@ public class Production {
                 ", name='" + name + '\'' +
                 ", code='" + code + '\'' +
                 ", volume=" + volume +" ml" +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
+                ", createdAt=" + TimestampUtil.toString(createdAt) +
+                ", updatedAt=" + TimestampUtil.toString(updatedAt) +
                 '}';
     }
 }

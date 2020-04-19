@@ -1,8 +1,6 @@
 package com.company.MenuPack;
 
-import com.company.db.BatchConnector;
 import com.company.db.ProductionConnector;
-import com.company.entity.Batch;
 import com.company.entity.Production;
 
 import java.sql.SQLException;

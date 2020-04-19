@@ -4,7 +4,6 @@ import com.company.db.FactoryConnector;
 import com.company.entity.Factory;
 
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.List;
 

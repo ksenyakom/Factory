@@ -1,9 +1,7 @@
 package com.company.db;
 
 import com.company.entity.Batch;
-import com.company.entity.Production;
 import com.company.util.BatchUtil;
-import com.company.util.ProductionUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

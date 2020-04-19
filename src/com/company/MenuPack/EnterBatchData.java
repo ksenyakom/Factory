@@ -2,13 +2,10 @@ package com.company.MenuPack;
 
 import com.company.db.BatchConnector;
 import com.company.entity.Batch;
-import com.company.entity.Factory;
-import com.company.entity.Production;
 import com.company.util.TimestampUtil;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.text.ParseException;
 
 public class EnterBatchData {
 
@@ -50,9 +47,9 @@ public class EnterBatchData {
 
         Timestamp batchDate;
         if (update) { // при обновлении объекта
-             batchDate = EnterTimestamp.enterTime("Введите дату партии (2020-11-11 12:30): ");
+             batchDate = EnterTimestamp.enterForObject("Введите дату партии (2020-11-11 12:30): ");
         }else {// При добавлении нового объекта
-            batchDate = EnterTimestamp.enterTime("Введите дату партии (2020-11-11 12:30), Enter - ввести сегодняшнюю: ");
+            batchDate = EnterTimestamp.enterForObject("Введите дату партии (2020-11-11 12:30), Enter - ввести сегодняшнюю: ");
             if (batchDate == null) batchDate = TimestampUtil.getNowSqlTimestamp();
         }
 

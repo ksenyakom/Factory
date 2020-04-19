@@ -1,12 +1,13 @@
 package com.company.db;
 
-import com.company.entity.Factory;
 import com.company.entity.Production;
-import com.company.util.FactoryUtil;
 import com.company.util.ProductionUtil;
 import com.company.util.TimestampUtil;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
