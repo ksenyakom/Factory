@@ -1,7 +1,7 @@
-package com.company.util;
+package academy.belhard.util;
 
-import com.company.db.ProductionConnector;
-import com.company.entity.Production;
+import academy.belhard.db.ProductionConnector;
+import academy.belhard.entity.Production;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

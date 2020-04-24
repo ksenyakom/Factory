@@ -1,8 +1,8 @@
-package com.company.db;
+package academy.belhard.db;
 
-import com.company.entity.Production;
-import com.company.util.ProductionUtil;
-import com.company.util.TimestampUtil;
+import academy.belhard.entity.Production;
+import academy.belhard.util.TimestampUtil;
+import academy.belhard.util.ProductionUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

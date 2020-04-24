@@ -1,7 +1,7 @@
-package com.company.db;
+package academy.belhard.db;
 
-import com.company.entity.Batch;
-import com.company.util.BatchUtil;
+import academy.belhard.entity.Batch;
+import academy.belhard.util.BatchUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

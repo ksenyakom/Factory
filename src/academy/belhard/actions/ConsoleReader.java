@@ -1,4 +1,4 @@
-package com.company.MenuPack;
+package academy.belhard.actions;
 
 import java.util.Scanner;
 

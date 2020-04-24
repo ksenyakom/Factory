@@ -1,4 +1,4 @@
-package com.company.entity;
+package academy.belhard.entity;
 
 public class Factory {
     private int id;

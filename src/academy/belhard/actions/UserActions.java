@@ -1,18 +1,21 @@
-package com.company;
+package academy.belhard.actions;
 
-import com.company.MenuPack.*;
-import com.company.db.BatchConnector;
-import com.company.db.FactoryConnector;
-import com.company.db.FullInfoConnector;
-import com.company.db.ProductionConnector;
-import com.company.entity.Batch;
-import com.company.entity.Factory;
-import com.company.entity.FullInfo;
-import com.company.entity.Production;
-import com.company.util.BatchUtil;
-import com.company.util.FactoryUtil;
-import com.company.util.FullInfoUtil;
-import com.company.util.ProductionUtil;
+import academy.belhard.db.BatchConnector;
+import academy.belhard.db.FactoryConnector;
+import academy.belhard.db.FullInfoConnector;
+import academy.belhard.db.ProductionConnector;
+import academy.belhard.enter.data.EnterBatchData;
+import academy.belhard.enter.data.EnterFactoryData;
+import academy.belhard.enter.data.EnterProductionData;
+import academy.belhard.enter.data.EnterTimestamp;
+import academy.belhard.entity.Batch;
+import academy.belhard.entity.Factory;
+import academy.belhard.entity.FullInfo;
+import academy.belhard.entity.Production;
+import academy.belhard.util.BatchUtil;
+import academy.belhard.util.FactoryUtil;
+import academy.belhard.util.FullInfoUtil;
+import academy.belhard.util.ProductionUtil;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;

@@ -1,8 +1,9 @@
-package com.company.MenuPack;
+package academy.belhard.enter.data;
 
-import com.company.db.BatchConnector;
-import com.company.entity.Batch;
-import com.company.util.TimestampUtil;
+import academy.belhard.actions.ConsoleReader;
+import academy.belhard.db.BatchConnector;
+import academy.belhard.entity.Batch;
+import academy.belhard.util.TimestampUtil;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;

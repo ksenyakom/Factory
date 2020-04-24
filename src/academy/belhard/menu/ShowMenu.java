@@ -1,4 +1,4 @@
-package com.company.MenuPack;
+package academy.belhard.menu;
 
 public class ShowMenu {
     public static void mainMenu() {

@@ -1,7 +1,7 @@
-package com.company.util;
+package academy.belhard.util;
 
-import com.company.db.BatchConnector;
-import com.company.entity.Batch;
+import academy.belhard.db.BatchConnector;
+import academy.belhard.entity.Batch;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

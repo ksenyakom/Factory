@@ -1,6 +1,7 @@
-package com.company.MenuPack;
+package academy.belhard.enter.data;
 
-import com.company.util.TimestampUtil;
+import academy.belhard.actions.ConsoleReader;
+import academy.belhard.util.TimestampUtil;
 
 import java.sql.Timestamp;
 import java.text.ParseException;

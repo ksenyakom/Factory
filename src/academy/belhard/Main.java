@@ -1,8 +1,11 @@
-package com.company;
+package academy.belhard;
 
-import com.company.MenuPack.ConsoleReader;
-import com.company.MenuPack.ShowMenu;
-import com.company.util.*;
+import academy.belhard.actions.UserActions;
+import academy.belhard.actions.ConsoleReader;
+import academy.belhard.util.BatchUtil;
+import academy.belhard.util.FactoryUtil;
+import academy.belhard.util.ProductionUtil;
+import academy.belhard.menu.ShowMenu;
 import org.postgresql.util.PSQLException;
 
 

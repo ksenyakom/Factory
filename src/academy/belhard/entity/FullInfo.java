@@ -1,6 +1,6 @@
-package com.company.entity;
+package academy.belhard.entity;
 
-import com.company.util.TimestampUtil;
+import academy.belhard.util.TimestampUtil;
 
 public class FullInfo {
     private Batch batch;

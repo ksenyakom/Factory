@@ -1,9 +1,9 @@
-package com.company.util;
+package academy.belhard.util;
 
-import com.company.entity.Batch;
-import com.company.entity.Factory;
-import com.company.entity.FullInfo;
-import com.company.entity.Production;
+import academy.belhard.entity.Batch;
+import academy.belhard.entity.Factory;
+import academy.belhard.entity.FullInfo;
+import academy.belhard.entity.Production;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -1,7 +1,7 @@
-package com.company.db;
+package academy.belhard.db;
 
-import com.company.entity.Factory;
-import com.company.util.FactoryUtil;
+import academy.belhard.entity.Factory;
+import academy.belhard.util.FactoryUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

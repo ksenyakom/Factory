@@ -1,7 +1,8 @@
-package com.company.MenuPack;
+package academy.belhard.enter.data;
 
-import com.company.db.FactoryConnector;
-import com.company.entity.Factory;
+import academy.belhard.actions.ConsoleReader;
+import academy.belhard.db.FactoryConnector;
+import academy.belhard.entity.Factory;
 
 import java.sql.SQLException;
 

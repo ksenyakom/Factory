@@ -1,7 +1,7 @@
-package com.company.db;
+package academy.belhard.db;
 
-import com.company.entity.FullInfo;
-import com.company.util.FullInfoUtil;
+import academy.belhard.entity.FullInfo;
+import academy.belhard.util.FullInfoUtil;
 
 import java.sql.*;
 import java.util.ArrayList;

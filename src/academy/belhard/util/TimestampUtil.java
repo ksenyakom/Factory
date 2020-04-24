@@ -1,4 +1,4 @@
-package com.company.util;
+package academy.belhard.util;
 
 import java.sql.Timestamp;
 import java.text.ParseException;
